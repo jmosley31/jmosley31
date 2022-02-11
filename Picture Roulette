@@ -1,0 +1,104 @@
+import BookClasses.*;
+import java.awt.Color;
+/**
+ *
+ * @author Jmosl
+ */
+public class PictureRoulette {
+
+    public static void main(String[] args) {
+
+        int num = 0;
+
+        if (args.length == 0) {
+            System.out.println("No parameters given");
+            return;
+        }
+
+        if (args.length > 0) {
+            Picture pic = new Picture(args[0]);
+            if (args.length == 2) {
+
+                num = Integer.parseInt(args[1]);
+                if (num > 0 && num < 9) {
+                    int randNum = (int) (Math.random() * 10);
+                    num = randNum;
+
+                }
+            } else {
+                System.out.println("Error");
+                return;
+
+            }
+
+            switch (num) {
+                case 0:
+                    pic.blurArea(0, 0, pic.getWidth() - 1, pic.getHeight() - 1, 6);
+                    System.out.println("Number entered is : " + num);
+                    System.out.println("Running blur area method");
+                    pic.show();
+                    break;
+                case 1:
+                    pic.crop(pic.getWidth() / 3, pic.getHeight() / 3, pic.getWidth() / 3, pic.getHeight() / 3);
+                    System.out.println("Number entered is: " + num);
+                    System.out.println("Running crop area method");
+                    pic.show();
+                    break;
+                case 2:
+                    pic.horizontalShutters();
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running horizontal shutters method");
+                    pic.show();
+                    break;
+                case 3:
+                    pic.blackOut(100, 200, 100, 200);
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running black out area method");
+                    pic.show();
+                    break;
+                case 4:
+                    pic.verticalShutters();
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running vertical shutters method");
+                    pic.show();
+                    break;
+                case 5:
+                    pic.mirrorHorizontalBottomToTop();
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running Mirror Horizontal Bottom to Top method");
+                    pic.show();
+                    break;
+                case 6:
+                    for (int i = 0; i < 5; i++) {
+                        pic.fade();
+                    }
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running fade method");
+                    pic.show();
+                    break;
+                case 7:
+                    pic.lighten();
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running lighten method");
+                    pic.show();
+                    break;
+                case 8:
+                    pic.decreaseBlue(0.2);
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running decrease blue method");
+                    pic.show();
+                    break;
+                case 9:
+                    pic.colorfulEdgeDetection(7.0, 50);
+                    System.out.println("Number generated is: " + num);
+                    System.out.println("Running colorful edge detection method");
+                    pic.show();
+                    break;
+                default:
+                    System.out.println("The number is not between 1 & 9");
+                    break;
+            }
+        }
+    }
+
+}
