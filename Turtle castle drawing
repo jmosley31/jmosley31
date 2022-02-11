@@ -1,0 +1,75 @@
+package pcheckpoint1;
+import java.awt.Color;
+import BookClasses.*;
+
+/**
+ *
+ * @author Jmosl
+ */
+public class PCheckpoint1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //creates world that you can create a new turtle into
+        World w = new World();
+        // creates new turtle named tom
+        Turtle tom = new Turtle(w);
+
+        tom.penDown();
+        //allows pen to be put down to draw
+        tom.forward(100);
+        //moves tom forward 100 pixels
+        tom.turnRight();
+        //turns tom right 90 degrees
+        tom.forward(100);
+        tom.turnLeft();
+        //turns tom left 90 degrees
+        tom.forward(50);
+        //moves tom forward only 50 degrees
+        tom.turn(45);
+        //turns tom right 45 degrees
+        tom.forward(25);
+        tom.turn(90);
+        tom.forward(25);
+        tom.turn(45);
+        tom.forward(50);
+        tom.turnLeft();
+        tom.forward();
+        tom.turnRight();
+        tom.forward();
+        tom.turnRight();
+        tom.forward(235);
+        tom.penUp();
+        // pen is put up for no more drawing
+       
+        tom.forward(50);
+        tom.turnRight();
+        tom.forward();
+        tom.turnRight();
+        tom.forward(200);
+        // pen is put down for more drawing 
+        tom.penDown();
+        tom.forward(30);
+        tom.turnRight();
+        tom.forward(30);
+        tom.turnRight();
+        tom.forward(30);
+        tom.turnRight();
+        tom.forward(30);
+        tom.turnRight();
+        tom.forward(30 / 2);
+        tom.turnRight();
+        tom.forward(30);
+        tom.turnRight();
+        tom.forward(30 / 2);
+        tom.turnRight();
+        tom.forward(30 / 2);
+        tom.turnRight();
+        tom.forward(30);
+
+    }
+
+}
